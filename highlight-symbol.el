@@ -302,7 +302,7 @@ element in of `highlight-symbol-faces'."
         (suffix-length (length (cdr highlight-symbol-border-pattern))))
     (propertize (substring symbol prefix-length
                            (- (length symbol) suffix-length))
-                'face (assoc symbol highlight-symbol-keyword-alist))))
+                'face (cl-cdaddr (assoc symbol highlight-symbol-keyword-alist)))))
 
 ;;;###autoload
 (defun highlight-symbol-count (&optional symbol message-p)
